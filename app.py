@@ -24,6 +24,8 @@ if neigh:
 if room_type:
     df_filtered = df_filtered[df_filtered["room_type"].isin(room_type)]
 
+tab1, tab2 = st.tabs(["Search results", "Relations"])
+
 with tab1:
     st.subheader("Airbnbs found")
     st.dataframe(df_filtered[["name", "neighbourhood_group", "neighbourhood", "room_type", "price", "reviews_per_month"]].head())
